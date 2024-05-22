@@ -47,12 +47,12 @@
             int n = int.Parse(Console.ReadLine());
 
             int[,] matriz = new int[n,n];
-
+            Random r = new Random(); 
             for (int i = 0; i < matriz.GetLength(0); i++)
             {
                 for (int j = 0; j < matriz.GetLength(1); j++)
                 {
-                    Random r = new Random();
+                    
                     matriz[i, j] = r.Next(100);
                 }
             }
