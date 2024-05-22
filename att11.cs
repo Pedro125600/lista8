@@ -18,7 +18,7 @@
             ConverterSegundos(totalSegundos, out int hora, out int min, out int seg);
 
             
-            Console.WriteLine($"O total de {totalSegundos} segundos é equivalente a {hora:00}:{min:00}:{seg:00}.");
+            Console.WriteLine($"O total de {totalSegundos} segundos é equivalente a {hora}:{min}:{seg}.");
 
             Console.ReadLine(); 
         }
