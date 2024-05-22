@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace att3
+﻿namespace att3
 {
-    class Program
+    internal class Program
     {
-        static int MMC(int n1 , int n2)
+        static int MMC(int n1, int n2)
         {
 
             int mmc = 1;
@@ -37,6 +31,27 @@ namespace att3
             return mmc;
         }
 
+        static int MDC(int n1, int n2)
+        {
+            while (n2 != 0)
+            {
+                int temp = n2;
+                n2 = n1 % n2;
+                n1 = temp;
+            }
+            return n1;
+        }
+
+        static int MDC(int n1, int n2, int n3)
+        {
+            int mdc12 = MDC(n1, n2);
+
+            int mdc123 = MDC(mdc12, n3);
+
+            return mdc123;
+        }
+
+
         static void Main(string[] args)
         {
             int op;
@@ -54,12 +69,18 @@ namespace att3
                     int n1 = int.Parse(Console.ReadLine());
                     Console.WriteLine("Digite o segundo numero :");
                     int n2 = int.Parse(Console.ReadLine());
-                   Console.WriteLine(MMC(n1 , n2));
+                    Console.WriteLine(MMC(n1, n2));
                 }
 
-                else if(op == 2)
+                else if (op == 2)
                 {
-                    
+                    Console.WriteLine("Digite o primeiro numero :");
+                    int n1 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o segundo numero :");
+                    int n2 = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o terceiro numero :");
+                    int n3 = int.Parse(Console.ReadLine());
+                    Console.WriteLine(MDC(n1, n2,n3));
                 }
 
                 else if (op == 3)
